@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Друзья • Кафе | Главная</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.02em; }
+        .cafe-card { transition: all 0.3s ease; }
+        .cafe-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05); }
+        .nav-link { position: relative; }
+        .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #A8C5B8; transition: width 0.3s ease; }
+        .nav-link:hover:after, .nav-link.active:after { width: 100%; }
+        .soft-shadow { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05); }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(63, 58, 54, 0.08), rgba(63, 58, 54, 0.28)); }
+    </style>
+</head>
+<body class="bg-white text-[#3F3A36]">
+    <header class="bg-white border-b border-[#F5F0E6] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-x-3">
+                    <img src="649249375_18427865593138551_7399483420034107663_n.jpg" alt="Друзья" class="w-11 h-11 rounded-2xl object-cover">
+                    <span class="heading-serif text-3xl font-bold tracking-tighter">Друзья</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="index.html" class="nav-link active text-[#A8C5B8]">Главная</a>
+                    <a href="menu.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">Меню</a>
+                    <a href="promotions.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">Акции</a>
+                    <a href="about.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">О кафе</a>
+                    <a href="contacts.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">Контакты</a>
+                </nav>
+                <div class="flex items-center gap-x-4">
+                    <a href="tel:+77771234567" class="hidden md:flex items-center gap-x-2 text-sm font-medium hover:text-[#A8C5B8]">
+                        <i class="fa-solid fa-phone text-[#A8C5B8]"></i>
+                        <span>+7 (777) 123-45-67</span>
+                    </a>
+                    <a href="https://wa.me/77771234567" target="_blank" class="bg-[#A8C5B8] hover:bg-[#8FB8A0] text-white px-5 py-2.5 rounded-2xl text-sm font-semibold inline-flex items-center gap-x-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span class="hidden sm:inline">WhatsApp</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-[#F5F0E6] bg-white px-6 py-4 flex flex-col gap-y-3 text-sm">
+            <a href="index.html" class="text-[#A8C5B8]">Главная</a>
+            <a href="menu.html">Меню</a>
+            <a href="promotions.html">Акции</a>
+            <a href="about.html">О кафе</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-8 text-center">
+        <p class="text-xl md:text-2xl text-[#5C5752] max-w-2xl mx-auto font-light">
+            Место, где собираются близкие люди за вкусной едой и хорошим настроением
+        </p>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 pt-8 pb-12 text-center">
+        <span class="uppercase tracking-[0.2em] text-base md:text-lg font-medium text-[#A8C5B8]">Добро пожаловать в Друзья</span>
+        <h2 class="heading-serif text-2xl md:text-3xl mt-3 mb-6 font-normal tracking-tight">Здесь всегда рады встречать друзей</h2>
+        <p class="text-base md:text-lg text-[#5C5752] max-w-2xl mx-auto leading-relaxed">
+            Уютное кафе, где можно насладиться профессиональной кухней разных стран, провести время на двух разных террасах и почувствовать настоящую атмосферу дружбы.
+        </p>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-16">
+        <div class="mb-8">
+            <span class="text-[#A8C5B8] text-sm font-semibold tracking-widest">ЧТО У НАС ЕСТЬ</span>
+            <h3 class="heading-serif text-4xl">Четыре пространства для вас</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="menu.html#bar" class="cafe-card bg-white border border-[#F5F0E6] rounded-3xl overflow-hidden soft-shadow">
+                <div class="h-48 bg-[#F5F0E6] flex items-center justify-center"><i class="fa-solid fa-wine-glass text-6xl text-[#A8C5B8]"></i></div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-2xl mb-2">Бар</h4>
+                    <p class="text-[#5C5752] text-sm">Коктейли, смузи, крафтовое пиво и авторские напитки</p>
+                </div>
+            </a>
+            <a href="menu.html#kitchen" class="cafe-card bg-white border border-[#F5F0E6] rounded-3xl overflow-hidden soft-shadow">
+                <div class="h-48 bg-[#F5F0E6] flex items-center justify-center"><i class="fa-solid fa-utensils text-6xl text-[#A8C5B8]"></i></div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-2xl mb-2">Кухня</h4>
+                    <p class="text-[#5C5752] text-sm">Профессиональная кухня разных стран, свежие салаты, паста и закуски</p>
+                </div>
+            </a>
+            <a href="menu.html#kids" class="cafe-card bg-white border border-[#F5F0E6] rounded-3xl overflow-hidden soft-shadow">
+                <div class="h-48 bg-[#F5F0E6] flex items-center justify-center"><i class="fa-solid fa-child text-6xl text-[#A8C5B8]"></i></div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-2xl mb-2">Детское меню</h4>
+                    <p class="text-[#5C5752] text-sm">Бейби-боксы с игрушками, мини-бургеры, наггетсы и полезные блюда</p>
+                </div>
+            </a>
+            <a href="about.html#terrace" class="cafe-card bg-white border border-[#F5F0E6] rounded-3xl overflow-hidden soft-shadow">
+                <div class="h-48 bg-[#F5F0E6] flex items-center justify-center"><i class="fa-solid fa-sun text-6xl text-[#A8C5B8]"></i></div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-2xl mb-2">Летняя терраса</h4>
+                    <p class="text-[#5C5752] text-sm">Две террасы: тихая для спокойного отдыха и большая с живой музыкой по выходным</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="bg-[#F5F0E6] py-16">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col lg:flex-row gap-10 items-center">
+            <div class="lg:w-5/12">
+                <div class="inline-block px-4 py-1 bg-white rounded-3xl text-xs font-semibold tracking-widest mb-4 text-[#A8C5B8]">АКТУАЛЬНАЯ АКЦИЯ</div>
+                <h3 class="heading-serif text-5xl leading-none mb-6">Чемпионат мира<br>в «Друзьях»</h3>
+                <p class="text-lg text-[#5C5752] mb-8">До 20 июля мы показываем все матчи на большом экране. Атмосфера, вкусная еда и настоящие эмоции футбола.</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="promotions.html" class="bg-[#3F3A36] hover:bg-black text-white px-7 py-3.5 rounded-3xl font-semibold">Узнать все детали</a>
+                    <a href="https://wa.me/77771234567" class="border border-[#3F3A36] hover:bg-white px-7 py-3.5 rounded-3xl font-semibold inline-flex items-center gap-x-2">
+                        <i class="fa-brands fa-whatsapp"></i> Написать менеджеру
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-7/12 bg-white rounded-3xl p-8 soft-shadow">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="text-6xl">📺</div>
+                    <div>
+                        <div class="font-semibold text-xl">Большой экран + атмосфера</div>
+                        <div class="text-[#5C5752]">Каждый матч — это событие</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4 text-sm">
+                    <div class="bg-[#F5F0E6] rounded-2xl p-4"><div class="font-medium">До 20 июля</div><div class="text-xs text-[#5C5752] mt-0.5">Осталось совсем немного</div></div>
+                    <div class="bg-[#F5F0E6] rounded-2xl p-4"><div class="font-medium">Большой экран</div><div class="text-xs text-[#5C5752] mt-0.5">Отличная картинка и звук</div></div>
+                    <div class="bg-[#F5F0E6] rounded-2xl p-4"><div class="font-medium">Вкусная еда</div><div class="text-xs text-[#5C5752] mt-0.5">Меню специально на матчи</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <span class="text-[#A8C5B8] text-sm font-semibold tracking-widest">ОТЗЫВЫ ГОСТЕЙ</span>
+            <h3 class="heading-serif text-4xl mt-2">Что говорят о нас</h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border border-[#F5F0E6] rounded-3xl p-7 soft-shadow">
+                <div class="flex gap-x-1 text-[#C4A77D] mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="italic text-[#5C5752]">"Отмечали день рождения ребёнка — всё было идеально. Детское меню понравилось даже взрослым, а терраса просто волшебная."</p>
+                <div class="mt-6 text-sm"><span class="font-semibold">Анна К.</span> <span class="text-[#A8C5B8]">• 3 дня назад</span></div>
+            </div>
+            <div class="bg-white border border-[#F5F0E6] rounded-3xl p-7 soft-shadow">
+                <div class="flex gap-x-1 text-[#C4A77D] mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                <p class="italic text-[#5C5752]">"Смотрели финал Лиги чемпионов здесь. Большой экран, крутая атмосфера и очень вкусные закуски. Обязательно вернёмся на ЧМ!"</p>
+                <div class="mt-6 text-sm"><span class="font-semibold">Дмитрий и друзья</span> <span class="text-[#A8C5B8]">• на прошлой неделе</span></div>
+            </div>
+            <div class="bg-white border border-[#F5F0E6] rounded-3xl p-7 soft-shadow">
+                <div class="flex gap-x-1 text-[#C4A77D] mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="italic text-[#5C5752]">"Любимое место для встреч с друзьями. Особенно нравится тихая терраса днём и живая музыка по выходным на большой. Сервис на высоте."</p>
+                <div class="mt-6 text-sm"><span class="font-semibold">Мария С.</span> <span class="text-[#A8C5B8]">• 2 недели назад</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#3F3A36] text-[#F5F0E6]/90 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-10">
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-9 h-9 bg-[#A8C5B8] rounded-2xl flex items-center justify-center"><i class="fa-solid fa-users text-white"></i></div>
+                    <span class="heading-serif text-white text-3xl">Друзья</span>
+                </div>
+                <p class="max-w-xs text-sm">Место, где еда объединяет друзей. Ждём вас в любое время.</p>
+            </div>
+            <div class="md:col-span-3 text-sm">
+                <div class="font-semibold text-white mb-3">Навигация</div>
+                <div class="space-y-1.5">
+                    <a href="menu.html" class="block hover:text-white">Меню</a>
+                    <a href="promotions.html" class="block hover:text-white">Акции</a>
+                    <a href="about.html" class="block hover:text-white">О кафе</a>
+                    <a href="contacts.html" class="block hover:text-white">Контакты</a>
+                </div>
+            </div>
+            <div class="md:col-span-4 text-sm">
+                <div class="font-semibold text-white mb-3">Связаться с нами</div>
+                <div class="space-y-2">
+                    <a href="tel:+77771234567" class="flex items-center gap-x-2 hover:text-white"><i class="fa-solid fa-phone w-4"></i> +7 (777) 123-45-67</a>
+                    <a href="https://wa.me/77771234567" target="_blank" class="flex items-center gap-x-2 hover:text-white"><i class="fa-brands fa-whatsapp w-4"></i> Написать в WhatsApp</a>
+                    <div class="pt-1">г. Караганда, ул. Примерная, 42</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-6 border-t border-white/10 text-center text-xs text-[#F5F0E6]/60">
+            © 2026 Кафе «Друзья». Все права защищены. Сайт — демонстрационный макет.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu')?.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

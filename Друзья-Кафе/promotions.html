@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акции • Кафе Друзья — Чемпионат мира</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.02em; }
+        .nav-link { position: relative; }
+        .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #A8C5B8; transition: width 0.3s ease; }
+        .nav-link:hover:after, .nav-link.active:after { width: 100%; }
+        .countdown-box { background: linear-gradient(145deg, #F5F0E6, #ffffff); }
+        .soft-shadow { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05); }
+    </style>
+</head>
+<body class="bg-white text-[#3F3A36]">
+    <header class="bg-white border-b border-[#F5F0E6] sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-x-3">
+                    <img src="649249375_18427865593138551_7399483420034107663_n.jpg" alt="Друзья" class="w-11 h-11 rounded-2xl object-cover">
+                    <span class="heading-serif text-3xl font-bold tracking-tighter">Друзья</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="index.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">Главная</a>
+                    <a href="menu.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">Меню</a>
+                    <a href="promotions.html" class="nav-link active text-[#A8C5B8]">Акции</a>
+                    <a href="about.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">О кафе</a>
+                    <a href="contacts.html" class="nav-link text-[#3F3A36] hover:text-[#A8C5B8]">Контакты</a>
+                </nav>
+                <div class="flex items-center gap-x-4">
+                    <a href="tel:+77771234567" class="hidden md:flex items-center gap-x-2 text-sm font-medium hover:text-[#A8C5B8]">
+                        <i class="fa-solid fa-phone text-[#A8C5B8]"></i>
+                        <span>+7 (777) 123-45-67</span>
+                    </a>
+                    <a href="https://wa.me/77771234567?text=Здравствуйте!%20Интересует%20просмотр%20Чемпионата%20мира" target="_blank"
+                       class="bg-[#A8C5B8] hover:bg-[#8FB8A0] text-white px-5 py-2.5 rounded-2xl text-sm font-semibold inline-flex items-center gap-x-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span class="hidden sm:inline">Написать</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-[#F5F0E6] bg-white px-6 py-4 flex flex-col gap-y-2 text-sm">
+            <a href="index.html">Главная</a>
+            <a href="menu.html">Меню</a>
+            <a href="promotions.html" class="text-[#A8C5B8]">Акции</a>
+            <a href="about.html">О кафе</a>
+            <a href="contacts.html">Контакты</a>
+        </div>
+    </header>
+
+    <div class="bg-[#3F3A36] text-white py-16">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-block px-5 py-1.5 bg-white/10 rounded-3xl text-sm mb-4 tracking-widest">ДО 20 ИЮЛЯ 2026</div>
+            <h1 class="heading-serif text-6xl md:text-7xl tracking-tighter mb-4">Чемпионат мира<br>в кафе «Друзья»</h1>
+            <p class="max-w-lg mx-auto text-xl text-white/80">Большой экран • Вкусная еда • Настоящие эмоции футбола</p>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 -mt-8">
+        <div class="countdown-box rounded-3xl border border-[#F5F0E6] p-8 md:p-10 text-center soft-shadow">
+            <div class="uppercase tracking-[3px] text-xs font-semibold text-[#A8C5B8] mb-4">ОСТАЛОСЬ ВРЕМЕНИ ДО ОКОНЧАНИЯ АКЦИИ</div>
+            <div id="countdown" class="flex justify-center gap-x-4 md:gap-x-8 text-5xl md:text-6xl font-semibold tabular-nums">
+                <!-- JS -->
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-12">
+            <div>
+                <h3 class="heading-serif text-4xl mb-6">Как проходит просмотр</h3>
+                <div class="space-y-6 text-[#5C5752]">
+                    <div class="flex gap-4">
+                        <div class="mt-1 w-6 h-6 flex-shrink-0 text-[#A8C5B8]"><i class="fa-solid fa-tv fa-lg"></i></div>
+                        <div>
+                            <div class="font-semibold text-[#3F3A36]">Большой экран и отличный звук</div>
+                            <div class="text-sm mt-1">Каждый матч ощущается как настоящее событие. Комфортные кресла и отличный обзор.</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 w-6 h-6 flex-shrink-0 text-[#A8C5B8]"><i class="fa-solid fa-users fa-lg"></i></div>
+                        <div>
+                            <div class="font-semibold text-[#3F3A36]">Атмосфера и эмоции</div>
+                            <div class="text-sm mt-1">Болельщики, друзья, крики «ГОЛ!» и поддержка любимых команд — всё здесь.</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 w-6 h-6 flex-shrink-0 text-[#A8C5B8]"><i class="fa-solid fa-utensils fa-lg"></i></div>
+                        <div>
+                            <div class="font-semibold text-[#3F3A36]">Вкусная еда и напитки</div>
+                            <div class="text-sm mt-1">Специальное меню на время матчей. Закуски, пиво, коктейли — заказывайте прямо во время игры.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-[#F5F0E6] rounded-3xl p-8">
+                <h4 class="font-semibold text-xl mb-4">Важная информация</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex gap-x-3"><span class="font-medium w-28 flex-shrink-0">Сроки акции:</span> <span>до 20 июля 2026 включительно</span></li>
+                    <li class="flex gap-x-3"><span class="font-medium w-28 flex-shrink-0">Бронирование:</span> <span>Не обязательно, но желательно в пиковые матчи</span></li>
+                    <li class="flex gap-x-3"><span class="font-medium w-28 flex-shrink-0">Специальные цены:</span> <span>В период акции действуют стандартные цены меню</span></li>
+                    <li class="flex gap-x-3"><span class="font-medium w-28 flex-shrink-0">Терраса:</span> <span>Можно смотреть и на большой террасе (по выходным — с живой музыкой)</span></li>
+                </ul>
+                
+                <div class="mt-8 pt-6 border-t border-white/60">
+                    <a href="https://wa.me/77771234567?text=Здравствуйте!%20Хочу%20забронировать%20стол%20на%20просмотр%20матча%20ЧМ" 
+                       class="inline-flex items-center justify-center w-full bg-[#3F3A36] hover:bg-black text-white font-semibold py-4 rounded-3xl transition-colors">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> 
+                        Забронировать стол на матч
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 pb-16 text-center">
+        <p class="text-[#5C5752] max-w-md mx-auto">Приходите всей компанией — будет весело! Делитесь эмоциями и поддерживайте свою команду вместе с «Друзьями».</p>
+    </div>
+
+    <footer class="bg-[#3F3A36] text-[#F5F0E6]/80 pt-10 pb-8 text-center text-xs">
+        © 2026 Кафе «Друзья» • Акция действует до 20 июля 2026
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu')?.classList.toggle('hidden');
+        });
+
+        function startCountdown() {
+            const countdownEl = document.getElementById('countdown');
+            const endDate = new Date('2026-07-20T23:59:59').getTime();
+            
+            function update() {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+                
+                if (distance < 0) {
+                    countdownEl.innerHTML = `<div class="text-3xl">Акция завершена</div>`;
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                countdownEl.innerHTML = `
+                    <div class="text-center"><span class="block text-5xl md:text-6xl font-semibold">${days}</span><span class="text-xs tracking-widest block mt-1">ДНЕЙ</span></div>
+                    <div class="text-center"><span class="block text-5xl md:text-6xl font-semibold">${hours}</span><span class="text-xs tracking-widest block mt-1">ЧАСОВ</span></div>
+                    <div class="text-center"><span class="block text-5xl md:text-6xl font-semibold">${minutes}</span><span class="text-xs tracking-widest block mt-1">МИНУТ</span></div>
+                    <div class="text-center"><span class="block text-5xl md:text-6xl font-semibold">${seconds}</span><span class="text-xs tracking-widest block mt-1">СЕКУНД</span></div>
+                `;
+            }
+            
+            update();
+            setInterval(update, 1000);
+        }
+        
+        window.onload = startCountdown;
+    </script>
+</body>
+</html>
